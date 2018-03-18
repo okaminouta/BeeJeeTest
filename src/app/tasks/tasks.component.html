@@ -1,0 +1,8 @@
+<div style="padding-top: 30px">
+    <app-paginator [pages]="pages"></app-paginator>
+    <div class="card-group justify-content-sm-center"
+         style="margin: 40px;
+         padding: 20px">
+            <app-card *ngFor="let task of tasks" [task]="task"></app-card>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="content row">
+<div class="col-xl-6"><div class="input-group m-x-3 p-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">Username</span>
+  </div>
+  <input type="text" class="form-control"
+         aria-label="Default" aria-describedby="inputGroup-sizing-default"
+         [(ngModel)]="username">
+</div>
+  <div class="input-group m-x-3 p-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">email</span>
+    </div>
+    <input type="text" class="form-control"
+           aria-label="Default" aria-describedby="inputGroup-sizing-default"
+           [(ngModel)]="email">
+  </div>
+  <div class="input-group m-x-3 p-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">text</span>
+    </div>
+    <textarea class="form-control" rows="5" [(ngModel)]="text"> </textarea>
+  </div>
+  <div class="input-group mb-3 p-3">
+    <input type="file" class="form-control"
+           accept="image/gif, image/jpeg, image/png"
+           [imageToDataUrl]="options"
+           (imageSelected)="selected($event)"
+           (change)="handleFileInput($event.target.files)"
+           id="file">
+  </div>
+
+  <div class="col-md-12 text-align-center">
+    <button class="btn btn-primary " (click)="create()">create</button>
+    <button class="btn btn-primary " (click)="preview()">prev</button>
+  </div></div>
+<div class="col-xl-6">
+  <app-card  *ngIf="task" [task]="task"></app-card>
+  <div *ngIf="!task"><p>Fill the all fields and click "prev" to preview here</p></div>
+</div>
+
+
+
+
+</div>
